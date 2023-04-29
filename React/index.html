@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script type="text/babel">
+        // let ele = document.createElement('h1');
+        // ele.innerHTML = "Text based"
+        // console.log(ele);
+        // document.getElementById("root").appendChild(ele);
+        let root = document.getElementById("root");
+
+        // let ele = React.createElement('h1', {
+        //     children : ['HELLO']
+        // });
+        // ReactDOM.render(ele, root);
+
+
+        // JSX
+        // Functional Component
+        function Element({name = "Anonymous"}){
+            // console.log(props)
+            console.log(name);
+            return(
+                <h1>
+                    HELLO {name}
+                </h1>
+            )
+        }
+
+        function Main(){
+            return(
+                <React.Fragment>
+                    {/* Value that is passed to function is "props" */}
+                    <Element name = {"Shivanshu Sarin"}/>  
+                    <Element/>
+                    <Element/>
+                </React.Fragment>
+            )
+        }
+
+        ReactDOM.render(<Main/>, root);
+
+
+    </script>    
+</body>
+</html>
